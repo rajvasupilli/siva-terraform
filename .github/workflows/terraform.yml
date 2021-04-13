@@ -3,14 +3,14 @@ name: "Terraform"
 on:
   push:
     branches:
-      - sandbox
+    - sandbox
     paths:
-      - terraform/sandbox/**
+    - terraform/sandbox/**
   pull_request:
     branches:
-      - master
+    - master
     paths: 
-      - terraform/sandbox/**   
+    - terraform/sandbox/**   
 
 jobs:
   terraform:
