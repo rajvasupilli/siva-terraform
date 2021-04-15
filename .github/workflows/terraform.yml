@@ -3,21 +3,17 @@ name: "Terraform"
 on:
   push:
     branches:
-      - master
-    paths: 
-      - terraform/sandbox/**   
+    - master
+    paths:
+    - terraform/sandbox/**
+  
 
 jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
     environment: production
-
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
-    defaults:
-      run:
-        shell: bash
-
+   
     steps:
       - name: Terraform-cloud Apply
         uses: actions/github-script@0.9.0  
