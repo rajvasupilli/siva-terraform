@@ -6,6 +6,6 @@ ihpubiubiu
 uuwobvd v
 wrgwrg
 rg
-wegf weg
+wegf
 wegwegf
 jb
