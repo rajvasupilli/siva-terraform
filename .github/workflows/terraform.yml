@@ -21,8 +21,8 @@ jobs:
         # env:
         #   PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
+         # github-token: ${{ secrets.GITHUB_TOKEN }}
+           script: |
             github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
