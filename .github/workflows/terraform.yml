@@ -16,23 +16,21 @@ jobs:
    
     steps:
       - name: Terraform-cloud Apply
-        uses: actions/github-script@0.9.0  
+        uses: actions/github-script@v3 
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         # env:
         #   PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const output = `#### Run is available here: `
-            `#### Steps to be followed`
-            `#### 1. Click on the link above, This will navigate you to the terraform cloud dashboard`
-            `#### 2. Check for Run with your pull_request title, which says NEEDS CONFIRMATION`
-            `#### 3. Click on it, To open the run`
-            `#### 4. Review the Plan and click on Confirm & Apply`
-            
             github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: output
+              body: 'Run is available here: 
+            #### Steps to be followed
+            #### 1. Click on the link above, This will navigate you to the terraform cloud dashboard
+            #### 2. Check for Run with your pull_request title, which says NEEDS CONFIRMATION
+            #### 3. Click on it, To open the run
+            #### 4. Review the Plan and click on Confirm & Apply'
             })
