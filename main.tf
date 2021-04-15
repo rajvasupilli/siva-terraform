@@ -1,21 +1,21 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-    random = {
-      source = "hashicorp/random"
-    }
-  }
+#terraform {
+#   required_providers {
+#     aws = {
+#       source = "hashicorp/aws"
+#     }
+#     random = {
+#       source = "hashicorp/random"
+#     }
+#   }
 
-  backend "remote" {
-    organization = "brambles"
+#   backend "remote" {
+#     organization = "brambles"
     
-    workspaces {
-      name = "gh-actions-demo"
-    }
-  }
-}
+#     workspaces {
+#       name = "gh-actions-demo"
+#     }
+#   }
+# }
 
 # Create a key pair
 
