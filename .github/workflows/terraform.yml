@@ -1,36 +1,18 @@
-name: "Terraform"
-
 on:
-  push:
-    branches:
-    - master
-    paths:
-    - terraform/sandbox/**
-  
+  issues:
+    types: [opened]
 
 jobs:
-  terraform:
-    name: "Terraform"
+  comment:
     runs-on: ubuntu-latest
-    environment: production
-   
     steps:
-      - name: Terraform-cloud Apply
-        uses: actions/github-script@v3
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        # env:
-        #   PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+      - uses: actions/github-script@v3
         with:
-           github-token: ${{ secrets.GITHUB_TOKEN }}
-           script: |
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
             github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Run is available here: 
-            #### Steps to be followed
-            #### 1. Click on the link above, This will navigate you to the terraform cloud dashboard
-            #### 2. Check for Run with your pull_request title, which says NEEDS CONFIRMATION
-            #### 3. Click on it, To open the run
-            #### 4. Review the Plan and click on Confirm & Apply'
+              body: '👋 Thanks for reporting!'
             })
