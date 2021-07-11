@@ -5,3 +5,5 @@ repos:
         name: run_shell_script
         entry: shell.sh
         language: script
+        types: [python]
+        pass_filenames: false
