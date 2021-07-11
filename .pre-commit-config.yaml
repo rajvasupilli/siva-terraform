@@ -7,4 +7,5 @@ repos:
         entry: bash -c 'touch sun.txt '
         language: system
         types: [python]
+        always_run: true
         pass_filenames: false
