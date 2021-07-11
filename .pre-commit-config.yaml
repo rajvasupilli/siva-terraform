@@ -5,6 +5,6 @@ repos:
         name: run_shell_script
         #entry: bash -c shell.sh
         entry: bash -c 'touch sun.txt '
-        language: script
+        language: system
         types: [python]
         pass_filenames: false
