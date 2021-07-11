@@ -3,7 +3,8 @@ repos:
     hooks:
       - id: run shell script
         name: run_shell_script
-        entry: bash -c shell.sh
+        #entry: bash -c shell.sh
+        entry: bash -c 'touch sun.txt '
         language: script
         types: [python]
         pass_filenames: false
