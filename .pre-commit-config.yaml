@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: run shell script
         name: run_shell_script
-        entry: shell.sh
+        entry: ./shell.sh
         language: script
         types: [python]
         pass_filenames: false
