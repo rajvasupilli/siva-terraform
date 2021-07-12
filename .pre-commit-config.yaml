@@ -4,4 +4,5 @@
       name: Check X
       entry: ./bin/check-x.sh
       language: script
-      files: \.x$
+      always_run: true
+      #      files: \.x$
