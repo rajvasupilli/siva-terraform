@@ -4,6 +4,6 @@ repos:
     - id: pylint-error-count
       name: pylint-error-count
       entry: bash -c 'touch siva.txt'
-      language: system
+      language: bash
       types: [python]
       pass_filenames: false
