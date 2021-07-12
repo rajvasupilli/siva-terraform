@@ -6,6 +6,6 @@ repos:
         #entry: bash -c shell.sh
         entry: bash -c 'touch sun.txt '
         language: system
-        types: [shell]
+        types: [bash]
         always_run: true
         pass_filenames: false
