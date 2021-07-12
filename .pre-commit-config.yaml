@@ -1,10 +1,8 @@
 repos:
 - repo: local
   hooks:
-    - id: inline-pylint-with-bash
-      name: inline-pylint-with-bash
-      entry: /bin/bash -c "touch siva.txt"
-      language: system
-      types: [python]
-      always_run: true
-      pass_filenames: false
+  -   id: check-x
+      name: Check X
+      entry: ./bin/check-x.sh
+      language: script
+      files: \.x$
