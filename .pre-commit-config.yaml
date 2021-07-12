@@ -1,11 +1,9 @@
 repos:
--   repo: local
-    hooks:
-      - id: run shell script
-        name: run_shell_script
-        #entry: bash -c shell.sh
-        entry: bash -c 'touch sun.txt '
-        language: system
-        types: [bash]
-        always_run: true
-        pass_filenames: false
+- repo: local
+  hooks:
+    - id: pylint-error-count
+      name: pylint-error-count
+      entry: bash -c 'lines=$(pylint api/ | wc -l) && (( lines > 10)) && exit 1'
+      language: system
+      types: [python]
+      pass_filenames: false
