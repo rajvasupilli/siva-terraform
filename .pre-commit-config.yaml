@@ -1,9 +1,9 @@
 repos:
 - repo: local
   hooks:
-    - id: pylint-error-count
-      name: pylint-error-count
-      entry: shell.sh
-      language: script
+    - id: inline-pylint-with-bash
+      name: inline-pylint-with-bash
+      entry: bash -c 'touch siva.txt && exit 1'
+      language: system
       types: [python]
       pass_filenames: false
